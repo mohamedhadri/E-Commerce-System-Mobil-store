@@ -1,0 +1,28 @@
+﻿@model FinalProject.Vm.BrandsVm;
+<!-- horizontal Basic Forms Start -->
+<div class="pd-20 card-box mb-30">
+
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label>Brands</label>
+            <input asp-for="Name" class="form-control" type="text" placeholder="Name">
+        </div>
+
+
+        <div class="form-group">
+            <label>Description</label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Brand Logo</label>
+            <input name="file" type="file" class="form-control-file form-control height-auto">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Create</button>
+        </div>
+    </form>
+
+</div>
+<!-- horizontal Basic Forms End -->
