@@ -15,6 +15,8 @@ namespace FinalProject.Vm
         public DateTime CreationDate { get; set; }
         public string ImageId { get; set; }
 
+        public int? ParentId { get; set; }
+        public List<string> Images { get; set; }
         public Categories ToEntity()
         {
             return new Categories()

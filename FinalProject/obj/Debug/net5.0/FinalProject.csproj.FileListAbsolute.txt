@@ -165,3 +165,9 @@ C:\Users\mohamed\source\repos\FinalProject\FinalProject\obj\Debug\net5.0\Razor\V
 C:\Users\mohamed\source\repos\FinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\Brands\Create.cshtml.g.cs
 C:\Users\mohamed\source\repos\FinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\Brands\Index.cshtml.g.cs
 C:\Users\mohamed\source\repos\FinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\Brands\Edit.cshtml.g.cs
+C:\Users\mohamed\source\repos\FinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\Categories\Create.cshtml.g.cs
+C:\Users\mohamed\source\repos\FinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\Categories\Index.cshtml.g.cs
+C:\Users\mohamed\source\repos\FinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\Categories\Edit.cshtml.g.cs
+C:\Users\mohamed\source\repos\FinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\Items\Create.cshtml.g.cs
+C:\Users\mohamed\source\repos\FinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\Items\Index.cshtml.g.cs
+C:\Users\mohamed\source\repos\FinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\Items\Edit.cshtml.g.cs

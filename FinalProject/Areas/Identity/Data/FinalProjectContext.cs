@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace FinalProject.Data
+namespace FinalProject.Areas.Identity.Data
 {
     public class FinalProjectContext : IdentityDbContext<AppUser>
     {
@@ -19,6 +19,8 @@ namespace FinalProject.Data
         public DbSet<Brands> Brands { get; set; }
         public DbSet<Attachments> Attachments { get; set; }
         public DbSet<Categories> Categories { get; set; }
+
+        public DbSet<Items> Items { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

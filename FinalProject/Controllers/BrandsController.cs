@@ -6,10 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using FinalProject.Data;
 using FinalProject.Models;
 using FinalProject.Vm;
-
+using FinalProject.Areas.Identity.Data;
 
 namespace WebApplication1.Controllers
 {
@@ -99,6 +98,7 @@ namespace WebApplication1.Controllers
 
         public async Task<IActionResult> Delete(BrandsVm brand, IFormFile file)
         {
+            //get brand from Database that id==id
             var brandDb = _dbContext.Brands.SingleOrDefault(x => x.Id == brand.Id);
             brandDb.IsDelete = true;
             await _dbContext.SaveChangesAsync();

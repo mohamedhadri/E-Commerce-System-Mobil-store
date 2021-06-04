@@ -29,7 +29,18 @@
 
 
 
+
         <div class="form-group">
+            @if (Model.Images.Count > 0)
+            {
+                foreach (var image in Model.Images)
+                {
+                    <div>
+                        <div><a href="@Url.ActionLink("DeleteImage", "Categories", new { fileName=image})"></a></div>
+                        <img src="~/uploads/Categories/@(image).png">
+                    </div>
+                }
+            }
             <label>Image</label>
             <input name="files" type="file" class="form-control-file form-control height-auto" multiple="">
         </div>

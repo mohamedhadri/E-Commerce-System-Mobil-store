@@ -1,0 +1,77 @@
+﻿@model FinalProject.Vm.ItemsVm;
+@using FinalProject.Enum;
+<!-- horizontal Basic Forms Start -->
+<div class="pd-20 card-box mb-30">
+
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label>Name</label>
+            <input asp-for="Name" class="form-control" type="text" placeholder="Name">
+        </div>
+
+
+        <div class="form-group">
+            <label>Items</label>
+            <select class="form-control" asp-items="@ViewBag.ListCategories" asp-for="CategoryId">
+                <option selected="">Select Category</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Brand</label>
+            <select class="form-control" asp-items="@ViewBag.Brands" asp-for="BrandId">
+                <option selected="">Select Brand</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Color</label>
+            <select class="form-control" asp-items="Html.GetEnumSelectList<Color>()" asp-for="BrandId">
+                <option selected="">Select Color</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Description</label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            @if (Model.Images.Count > 0)
+            {
+                foreach (var image in Model.Images)
+                {
+                    <div>
+                        <div><a href="@Url.ActionLink("DeleteImage", "Items", new { fileName=image})"></a></div>
+                        <img src="~/uploads/Items/@(image).png">
+                    </div>
+                }
+            }
+            <label>Image</label>
+            <input name="files" type="file" class="form-control-file form-control height-auto" multiple="">
+        </div>
+
+        <div class="form-group">
+            <label>Price</label>
+            <input asp-for="Price" class="form-control" type="number" placeholder="$$$$">
+        </div>
+
+        <div class="form-group">
+            <label>Short Description</label>
+            <textarea asp-for="ShortDescription" class="form-control"></textarea>
+        </div>
+
+
+
+        <div class="form-group">
+            <label>Image</label>
+            <input name="files" type="file" class="form-control-file form-control height-auto" multiple="">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+    </form>
+
+</div>
+<!-- horizontal Basic Forms End -->

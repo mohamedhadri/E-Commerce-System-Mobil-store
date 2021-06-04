@@ -8,14 +8,14 @@
     <link rel="stylesheet" type="text/css" href="~/admin/assets/vendor/datatables/css/select.bootstrap4.css">
     <link rel="stylesheet" type="text/css" href="~/admin/assets/vendor/datatables/css/fixedHeader.bootstrap4.css">
 }
-@model IQueryable<FinalProject.Vm.CategoryVm>;
+@model IQueryable<FinalProject.Vm.ItemsVm>;
 <!-- ============================================================== -->
 <!-- data table  -->
 <!-- ============================================================== -->
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
     <div class="card">
         <div class="card-header">
-            <h5 class="mb-0">Categories</h5>
+            <h5 class="mb-0">Items</h5>
 
         </div>
         <div class="card-body">
@@ -24,32 +24,31 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Brand LOGO</th>
+                            <th> LOGO</th>
                             <th>Name</th>
                             <th>Creation Date</th>
                             <th class="datatable-nosort">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                      
 
-                        @foreach (var Category in Model)
+                        @foreach (var item in Model)
                         {
 
                             <tr>
-                                <td>@Category.Id</td>
-                                <td><img  style="width:30px; height:30px;" src="~/uploads/Categories/@Category.ImageId" /></td>
-                                <td>@Category.Name</td>
-                                <td>@Category.CreationDate </td>>
+                                <td>@item.Id</td>
+                                <td><img class="rounded-circle" style="width:50px;" src="~/uploads/Items/@item.ImageId" /></td>
+                                <td>@item.Name</td>
+                                <td>@item.Price </td>>
                                 <td>
                                     <div class="dropdown">
                                         <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                                             <i class="dw dw-more"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                            <a class="dropdown-item" href="@Url.Action("Create", "Categories")"><i class="dw dw-eye"></i> Create</a>
-                                            <a class="dropdown-item" href="@Url.ActionLink("Edit", "Categories", new { id = Category.Id })"><i class="dw dw-edit2"></i> Edit</a>
-                                            <a class="dropdown-item" href="@Url.ActionLink("Delete", "Categories", new { id = Category.Id })"><i class="dw dw-delete-3"></i> Delete</a>
+                                            <a class="dropdown-item" href="@Url.Action("Create", "Items")"><i class="dw dw-eye"></i> Create</a>
+                                            <a class="dropdown-item" href="@Url.ActionLink("Edit", "Items", new { id = item.Id })"><i class="dw dw-edit2"></i> Edit</a>
+                                            <a class="dropdown-item" href="@Url.ActionLink("Delete", "Items", new { id = item.Id })"><i class="dw dw-delete-3"></i> Delete</a>
                                         </div>
 
                                     </div>
@@ -65,7 +64,8 @@
 
         </div>
     </div>
-    <a class="btn btn-primary " href="@Url.Action("Create","Categories")" role="button">Create</a>
+    <a class="btn btn-primary " href="@Url.Action("Create","Items")" role="button">Create</a>
+
 </div>
 <!-- ============================================================== -->
 <!-- end data table  -->

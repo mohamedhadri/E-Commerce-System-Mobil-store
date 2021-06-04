@@ -5,10 +5,13 @@ using System.Threading.Tasks;
 
 namespace FinalProject.Enum
 {
-    public enum RecordType
+    public enum Color
     {
-
-        Categories,
-        Items
+        Red=0,
+        Black=1,
+        White=2,
+        Green=3,
+        Blue=4,
+        Yellow=5,
     }
 }
