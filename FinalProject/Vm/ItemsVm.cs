@@ -20,6 +20,10 @@ namespace FinalProject.Vm
         public int BrandId { get; set; }
         public double Price { get; set; }
         public string ImageId { get; set; }
+
+        public string BrandName { get; set; }
+
+        public string CategoryName { get; set; }
         public List<string> Images { get; set; }
 
         public Items ToEntity()

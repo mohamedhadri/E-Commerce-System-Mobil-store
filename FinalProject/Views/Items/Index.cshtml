@@ -1,14 +1,15 @@
 ﻿
 
-
 @section style{
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="~/admin/assets/vendor/datatables/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" type="text/css" href="~/admin/assets/vendor/datatables/css/buttons.bootstrap4.css">
     <link rel="stylesheet" type="text/css" href="~/admin/assets/vendor/datatables/css/select.bootstrap4.css">
     <link rel="stylesheet" type="text/css" href="~/admin/assets/vendor/datatables/css/fixedHeader.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="~/css/photo.css">
+
 }
-@model IQueryable<FinalProject.Vm.ItemsVm>;
+@model IEnumerable<FinalProject.Vm.ItemsVm>;
 <!-- ============================================================== -->
 <!-- data table  -->
 <!-- ============================================================== -->
@@ -26,7 +27,7 @@
                             <th>Id</th>
                             <th> LOGO</th>
                             <th>Name</th>
-                            <th>Creation Date</th>
+                            <th>Price</th>
                             <th class="datatable-nosort">Action</th>
                         </tr>
                     </thead>
@@ -37,7 +38,7 @@
 
                             <tr>
                                 <td>@item.Id</td>
-                                <td><img class="rounded-circle" style="width:50px;" src="~/uploads/Items/@item.ImageId" /></td>
+                                <td><img class="my-photos" src="~/uploads/Items/@item.ImageId" /></td>
                                 <td>@item.Name</td>
                                 <td>@item.Price </td>>
                                 <td>

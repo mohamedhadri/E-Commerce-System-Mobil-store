@@ -26,7 +26,7 @@ namespace FinalProject.Controllers
         }
         public IActionResult Index()
         {
-           var items = _dbContext.Items.FirstOrDefault(x => x.IsDelete == false).ToList.Select(x => new ItemsVm()
+            var items = _dbContext.Items.Where(x => x.IsDelete == false).ToList().Select(x => new ItemsVm()
            {
               Id= x.Id,
               Name= x.Name,
@@ -36,7 +36,7 @@ namespace FinalProject.Controllers
            });
           
 
-            return View();
+            return View(items);
         }
 
 

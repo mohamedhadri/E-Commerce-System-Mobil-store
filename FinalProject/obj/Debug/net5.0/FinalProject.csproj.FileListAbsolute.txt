@@ -171,3 +171,5 @@ C:\Users\mohamed\source\repos\FinalProject\FinalProject\obj\Debug\net5.0\Razor\V
 C:\Users\mohamed\source\repos\FinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\Items\Create.cshtml.g.cs
 C:\Users\mohamed\source\repos\FinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\Items\Index.cshtml.g.cs
 C:\Users\mohamed\source\repos\FinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\Items\Edit.cshtml.g.cs
+C:\Users\mohamed\source\repos\FinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\Shared\_UserLayout.cshtml.g.cs
+C:\Users\mohamed\source\repos\FinalProject\FinalProject\obj\Debug\net5.0\Razor\Views\User\Index.cshtml.g.cs
