@@ -36,7 +36,7 @@ namespace FinalProject.Controllers
             }).ToList();
 
 
-            var listItem = _context.Items.Where(x => x.IsDelete == false).Take(6).Select(x => new ItemsVm()
+            var listItem = _context.Items.Where(x =>  x.IsDelete == false && x.CategoryId == 7).Take(6).Select(x => new ItemsVm()
             {
                 Id = x.Id,
                 Name = x.Name,
@@ -46,26 +46,64 @@ namespace FinalProject.Controllers
 
             return View(new HomeVm() { ListCollections=listcollection,ListItems=listItem});
         }
+   
+
+          public async Task<IActionResult> Detail(int id)
+           {
+        var itemDb = await _context.Items.Include(x => x.Brands).Include(x => x.Categories).FirstOrDefaultAsync(x => x.Id == id);
+        var itemVm = new ItemsVm()
+        {
+           Id = itemDb.Id,
+            Name = itemDb.Name,
+            Description = itemDb.Description,
+            ShortDescription = itemDb.ShortDescription,
+           Price = itemDb.Price,
+            BrandName= itemDb.Brands.Name,
+            CategoryName= itemDb.Categories.Name,
+            Images= _context.Attachments.Where(a=> a.RecordId==itemDb.Id.ToString() && a.RecordType==RecordType.Items).Select(x=> x.FileName).ToList()
+        };
+
+        return View(itemVm);
+        }
+
+
+
+
+        public async Task<IActionResult> CheckOut(int id)
+        {
+          
+
+            var checkOutVm = new CheckOutVm
+            {
+
+                ItemId = id
+            };
+
+            return View(checkOutVm);
+
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> CheckOut(CheckOutVm checkOut)
+        {
+
+            await _context.Orders.AddAsync(new Orders()
+            { FullName = checkOut.FullName, Phone = checkOut.Phone, Address = checkOut.Address, ItemId = checkOut.ItemId, Email= checkOut.Email });
+
+            await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+        }
+
+
+
+
+
+
+
+
+
     }
-
-    //public async Task<IActionResult> Detail(int id)
-    //{
-      //  var itemDb = await _context.Items.Include(x => x.Brands).Include(x => x.Categories).FirstOrDefaultAsync(x => x.Id == id);
-        //var itemVm = new ItemsVm()
-        //{
-          //  Id = itemDb.Id,
-           // Name = itemDb.Name,
-           // Description = itemDb.Description,
-           // ShortDescription = itemDb.ShortDescription,
-           // Price = itemDb.Price,
-           // BrandName= itemDb.Brands.Name,
-           // CategoryName= itemDb.Categories.Name
-        //};
-
-        //return ();
-    //}
-
-
 
 
 }

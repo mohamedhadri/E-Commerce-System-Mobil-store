@@ -196,5 +196,35 @@ namespace FinalProject.Controllers
 
         }
 
+
+        public IActionResult UserOrders()
+        {
+            var list = _dbContext.Orders.ToList().Select(x => new CheckOutVm()
+            {
+
+                Id = x.Id,
+                ItemId = x.ItemId,
+                FullName = x.FullName,
+                Phone = x.Phone,
+                Address = x.Address,
+                Email = x.Email,
+                OrderStatus= x.OrderStatus
+
+            });
+            return View(list);
+        }
+
+
+
+        public async Task<IActionResult> ChangeStatus(OrderStatus status, int id)
+        {
+
+            var order = _dbContext.Orders.FirstOrDefault(x => x.Id == id);
+            order.OrderStatus = status;
+            await _dbContext.SaveChangesAsync();
+
+            return RedirectToAction("UserOrders");
+        }
+
     }
 }

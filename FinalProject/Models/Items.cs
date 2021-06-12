@@ -16,12 +16,14 @@ namespace FinalProject.Models
         public string Description { get; set; }
         public Color Color  { get; set; }
 
-        [ForeignKey("CategoryId")]
+        
         public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
         public Categories Categories { get; set; }
 
-        [ForeignKey("BrandId")]
+       
         public int BrandId { get; set; }
+        [ForeignKey("BrandId")]
         public Brands Brands { get; set; }
         public double Price { get; set; }
 
